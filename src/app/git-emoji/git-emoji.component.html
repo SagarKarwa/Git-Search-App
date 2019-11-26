@@ -1,0 +1,28 @@
+<h1>
+        Welcome to the Angular Fundamentals Git Emoji!
+   </h1>
+   
+   <nav>
+       <a routerLink = "/search" routerLinkActive="active">
+       <button>Search For Repositories</button>
+       </a>
+   
+       <a routerLink = "/users" routerLinkActive="active">
+        <button>Search For Users</button>
+        </a>
+
+        <a routerLink = "/" routerLinkActive="active">
+            <button>Home</button>
+        </a>
+   
+</nav>
+
+<div>
+    <ul class="list">
+        <li [ngStyle] = "{'background-color' : (i % 2 == 0) ? 'silver': 'white'}" class="list_item" *ngFor="let result of searchResults; index as i;">
+            <img class="avatar" [src]="result" />
+        </li>
+    </ul>
+</div>
+
+<ng-template #elseBlock><h3>LOADING....</h3></ng-template>
